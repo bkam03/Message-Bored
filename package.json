@@ -1,0 +1,19 @@
+{
+  "name": "message-bored",
+  "version": "1.0.0",
+  "description": "Angular 1.x Exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkam03/Message-Bored.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bkam03/Message-Bored/issues"
+  },
+  "homepage": "https://github.com/bkam03/Message-Bored#readme"
+}
