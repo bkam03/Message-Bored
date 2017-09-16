@@ -6,14 +6,13 @@ const User = db.user;
 const router = express.Router();
 
 router.get('/:id', ( req, res ) => {
-  console.log( `/api/users/id = ${ req.params.id }`);
+
   User.findOne( {
     where: {
       id: req.params.id
     }
   } )
   .then( ( user ) => {
-    console.log( 'find one user', user );
     res.send( user );
   } )
   .catch( ( err ) => {
@@ -23,10 +22,8 @@ router.get('/:id', ( req, res ) => {
 
 router.route( '/' )
 .get( ( req, res ) => {
-  console.log( '/api/users GET' );
   User.findAll()
   .then( ( users ) => {
-    console.log( 'users', users );
     res.send( users );
   } )
   .catch( ( err ) => {
@@ -34,11 +31,15 @@ router.route( '/' )
   } );
 } )
 .post( ( req, res ) => {
-  console.log( '/api/users POST' );
   User.create( {
     name: req.body.name
+  } )
+  .then( ( user ) => {
+    res.send( user );
+  } )
+  .catch( ( err ) => {
+    console.log( err );
   } );
-  res.end();
 } );
 
 module.exports = router;
