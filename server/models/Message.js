@@ -1,5 +1,5 @@
 module.exports = function( sequelize, DataTypes ) {
-  var message = sequelize.define( "message", {
+  var Message = sequelize.define( "message", {
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -16,5 +16,5 @@ module.exports = function( sequelize, DataTypes ) {
     }
   } );
 
-  return message;
+  return Message;
 }
