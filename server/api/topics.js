@@ -16,6 +16,20 @@ router.route( '/' )
   } );
 } )
 .put( ( req, res ) => {
+  Topic.update( {
+    topic: req.body.topic
+  },{
+    where: {
+      id: req.body.id
+    }
+  } )
+  .then( ( topic ) => {
+    console.log( topic );
+    res.send( topic );
+  } )
+  .catch( ( err ) => {
+    console.log( err );
+  } );
 
 } )
 .post( ( req, res ) => {
