@@ -1,12 +1,14 @@
 const express = require( 'express' );
 
-const { users, topics, messages } = require( '../models' );
+const usersRoute = require( './users.js' );
+const messagesRoute = require( './messages.js' );
+const topicsRoute = require( './topics.js' );
 
 const router = express.Router();
 
-router.get( '/', ( req, res ) => {
-  console.log( 'route works' );
-  res.end();
-} );
+router.use( '/users', usersRoute );
+router.use( '/topics', topicsRoute );
+router.use( '/messages', messagesRoute );
+
 
 module.exports = router;
