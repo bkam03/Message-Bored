@@ -10,8 +10,8 @@ module.exports = function( sequelize, DataTypes ) {
     classMethods: {
       associate: function( models ) {
 /*      card.hasMany( models.Task )*/
-        message.belongsTo( models.Topic );
-        message.belongsTo( models.Author );
+        message.belongsTo( models.topic );
+        message.belongsTo( models.author );
       }
     }
   } );

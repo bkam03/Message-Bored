@@ -9,12 +9,12 @@ module.exports = function( sequelize, DataTypes ) {
     classMethods: {
       associate: function( models ) {
 /*      card.hasMany( models.Task )*/
-        user.hasMany( models.Topic , {
+        /*user.hasMany( models.Topic , {
           name: 'created_by'
         } );
         user.hasMany( models.Message, {
           name: 'author_id'
-        } );
+        } );*/
       }
     }
   } );
