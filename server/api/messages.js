@@ -5,17 +5,38 @@ const { Message } = require( '../models' );
 const router = express.Router();
 
 
-router.route( '/' )
-.get( ( req, res ) => {
-  Message.findAll()
+router.get( '/latest', ( req, res ) => {
+  Message.findAll({
+    limit: 10,
+    where: {
+
+    },
+    order: [ [ 'createdAt', 'DESC'] ]
+  } )
   .then( ( messages ) => {
     res.send( messages );
   } )
   .catch( ( err ) => {
     res.send( err );
   } );
-} )
-.post( ( req, res ) => {
+} );
+
+router.get( '/by-topic/:topic_id', ( req, res ) => {
+  Message.findAll({
+    where: {
+      topic_id: req.params.topic_id
+    },
+    order: [ [ 'createdAt', 'ASC'] ]
+  } )
+  .then( ( messages ) => {
+    res.send( messages );
+  } )
+  .catch( ( err ) => {
+    res.send( err );
+  } );
+} );
+
+router.post( '/', ( req, res ) => {
   Message.create( {
     body: req.body.body
   } )
