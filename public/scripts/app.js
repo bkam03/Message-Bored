@@ -12,7 +12,7 @@ angular.module( 'app' )
   } )
   .when( '/users', {
     templateUrl: 'users.html',
-    controller: 'usersController'
+    controller: 'UserController'
   } )
   .otherwise( {
     template: '<h1><center>Nope</center></h1>'
