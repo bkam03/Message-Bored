@@ -1,21 +1,27 @@
 module.exports = function( sequelize, DataTypes ) {
-  var Topic = sequelize.define( "topic", {
+  var Topic = sequelize.define( "Topic", {
     topic: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true
     }
-  }, {
-    classMethods: {
-      associate: function( models ) {
-/*      card.hasMany( models.Task )*/
-/*        topic.hasMany( models.message, {
-          name: 'topic_id'
-        } );*/
-        topic.belongsTo( models.user );
-      }
-    }
   } );
 
+  Topic.associate = function( models ){
+    Topic.hasMany( models.Message, {
+      foreignKey: {
+        name: 'topic_id',
+//        allowNull: false
+      }
+    } );
+
+    Topic.belongsTo( models.User, {
+      foreignKey: {
+        name: 'created_by',
+//        allowNull: false
+      }
+    } );
+  };
+
   return Topic;
-}
+};
