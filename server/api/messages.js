@@ -1,10 +1,19 @@
 const express = require( 'express' );
 
+const { Message } = require( '../models' );
+
 const router = express.Router();
 
-router.get( '/', ( req, res ) => {
-  console.log( '/api/messages GET' );
-  res.end();
+
+router.route( '/' )
+.get( ( req, res ) => {
+  Message.findAll()
+  .then( ( messages ) => {
+    res.send( messages );
+  } )
+  .catch( ( err ) => {
+    res.send( err );
+  } );
 } );
 
 module.exports = router;

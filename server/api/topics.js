@@ -2,7 +2,7 @@ const express = require( 'express' );
 
 const db = require( '../models' );
 
-const Topic = db.topic;
+const Topic = db.Topic;
 const router = express.Router();
 
 router.route( '/' )
@@ -34,7 +34,8 @@ router.route( '/' )
 } )
 .post( ( req, res ) => {
   Topic.create( {
-    topic: req.body.topic
+    topic: req.body.topic,
+    author_id: req.body.author_id
   } )
   .then( ( topic ) => {
     res.send( topic );
