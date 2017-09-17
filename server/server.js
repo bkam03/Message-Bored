@@ -10,7 +10,7 @@ const app = express();
 
 app.use( bp.json( { extended: true } ) );
 
-app.use( express.static( 'public' ) );
+app.use( express.static( '../public' ) );
 
 app.use( '/api', apiRoute );
 
@@ -20,5 +20,5 @@ app.get( '*', ( req, res ) => {
 
 const server = app.listen( PORT, () => {
   console.log( `server listening at port ${ PORT }`);
-  db.sequelize.sync( { force: true } );
+  db.sequelize.sync( /*{ force: true }*/ );
 } );
