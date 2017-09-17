@@ -11,8 +11,6 @@ app.use( bp.json( { extended: true } ) );
 
 app.use( express.static( 'public' ) );
 
-app.get( '/', ( req, res )=> {
-
 app.use( '/api', apiRoute );
 
 const server = app.listen( PORT, () => {
