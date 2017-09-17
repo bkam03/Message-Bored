@@ -10,6 +10,10 @@ angular.module( 'app' )
     templateUrl: 'home.html',
     controller: 'homeController'
   } )
+  .when( '/users', {
+    templateUrl: 'users.html',
+    controller: 'usersController'
+  } )
   .otherwise( {
     template: '<h1><center>Nope</center></h1>'
   } );
