@@ -14,6 +14,17 @@ router.route( '/' )
   .catch( ( err ) => {
     res.send( err );
   } );
+} )
+.post( ( req, res ) => {
+  Message.create( {
+    body: req.body.body
+  } )
+  .then( ( message ) => {
+    res.send( message );
+  } )
+  .catch( ( err ) => {
+    res.send( err );
+  } );
 } );
 
 module.exports = router;
