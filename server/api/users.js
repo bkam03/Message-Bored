@@ -1,9 +1,6 @@
 const express = require( 'express' );
 
-const db = require( '../models');
-const User = db.user;
-const Message = db.message;
-
+const { User } = require( '../models');
 const router = express.Router();
 
 router.get('/:id', ( req, res ) => {
