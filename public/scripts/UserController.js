@@ -8,5 +8,8 @@ angular.module( 'app' )
     console.log( 'users in controller', users );
     $scope.users = users;
   } );
+
+  $scope.getUser = UserService.getUser;
+
   $scope.myModel="default";
 } ] );
