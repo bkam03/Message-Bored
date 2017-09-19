@@ -21,7 +21,6 @@ angular.module( 'app' )
     //$http
     return $http.get('/api/users')
     .then((users) => {
-      console.log('users', users );
       return users.data;
     })
     .catch( ( err ) => {
@@ -30,10 +29,7 @@ angular.module( 'app' )
   }
 
   function getUser( userId ){
-    console.log( 'getUser service received', userId );
-    return $http.get( `/api/users/${ userId }` )
     .then( ( user ) => {
-      console.log( 'service single user', user );
       return user.data;
     } )
     .catch( ( err ) => {
@@ -43,7 +39,7 @@ angular.module( 'app' )
 
   return {
     getUsers: getUsers,
-    getUser, getUser
+    getUser: getUser
 
   };
 
