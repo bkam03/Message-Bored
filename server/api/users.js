@@ -19,10 +19,8 @@ router.get('/:id', ( req, res ) => {
 
 router.route( '/' )
 .get( ( req, res ) => {
-  console.log( 'hit server route' );
   User.findAll()
   .then( ( users ) => {
-    console.log( 'sending users back from server', users );
     res.send( users );
   } )
   .catch( ( err ) => {
