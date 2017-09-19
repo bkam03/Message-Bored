@@ -4,7 +4,6 @@ const { User } = require( '../models');
 const router = express.Router();
 
 router.get('/:id', ( req, res ) => {
-
   User.findOne( {
     where: {
       id: req.params.id
