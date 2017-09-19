@@ -29,6 +29,7 @@ angular.module( 'app' )
   }
 
   function getUser( userId ){
+    return $http.get( `/api/users/${ userId }` )
     .then( ( user ) => {
       return user.data;
     } )
