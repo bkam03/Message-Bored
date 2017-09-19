@@ -12,14 +12,17 @@
      <br /> -->
 
   <div ng-repeat="user in users">
-  <a ng-click="getUser( this.user.id )">{{ user.name }}</p>
-  ###
-
-
-
-
-
-    {{ myModel }}
+  <a ng-click="showUserHandler( this )">{{ user.name }}</p>
+    <br />
+      {{ myModel }}
+    <br />
   </div>
+
+  <div>
+    {{ user.name }}
+    {{ user.id }}
+
+  </div>
+
 </body>
 </html>
