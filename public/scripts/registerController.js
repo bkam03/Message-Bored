@@ -2,7 +2,9 @@ angular.module( 'app' )
 .controller( 'registerController', [ '$scope', 'UserService', function( $scope, UserService ){
   $scope.UserService = UserService;
 
-  $scope.a = 'NOW';
+  $scope.username = "";
+
+
 
 
 
