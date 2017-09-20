@@ -5,6 +5,12 @@ angular.module( 'app' )
   $scope.username = "";
 
 
+  function addUser( username ){
+    console.log( 'addUser in controller', username );
+    UserService.addUser( username );
+  }
+
+  $scope.addUser = addUser;
 
 
 
