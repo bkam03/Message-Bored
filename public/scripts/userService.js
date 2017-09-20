@@ -38,10 +38,14 @@ angular.module( 'app' )
     } );
   }
 
+  function addUser( username ){
+    console.log( 'addUser service', username );
+  }
+
   return {
     getUsers: getUsers,
-    getUser: getUser
-
+    getUser: getUser,
+    addUser: addUser
   };
 
 } ] );
