@@ -9,14 +9,14 @@
   <body ng-app="app">
 
   <div ng-controller='navigationController'>
-    Test: {{ test }}
+    Test:
     Navigation: <br>
     <a ng-href="/">Home</a>
 <!--
     <a ng-href="">Login</a>
     <a ng-href="">Logout</a>
 -->
-    <a ng-href="/register">Register</a>
+    <a ng-href="/register" ng-if="!isSignedIn">Register</a>
     <a ng-href="/users">Users</a>
     ---------------------------
 <!--
