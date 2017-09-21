@@ -18,6 +18,10 @@ angular.module( 'app' )
     templateUrl: 'register.html',
     controller: 'registerController'
   } )
+  .when( '/login', {
+    templateUrl: 'login.html',
+    controller: 'loginController'
+  } )
   .otherwise( {
     template: '<h1><center>Nope</center></h1>'
   } );
