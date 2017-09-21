@@ -1,4 +1,6 @@
 angular.module( 'app' )
-.controller( 'loginController', [ '$scope', function( $scope ){
+.controller( 'loginController', [ '$scope', 'signInOutService', function( $scope, signInOutService ){
   $scope.test = 'no';
+  $scope.localStorage = signInOutService.localStorage;
+
 } ] );
