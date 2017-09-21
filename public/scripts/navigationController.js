@@ -2,10 +2,12 @@ angular.module( 'app' )
 .controller( 'navigationController', [ '$scope', '$rootScope', function( $scope, $rootScope ){
 
   function logout(){
-
+    console.log( 'firing logout' );
+    $rootScope.isSignedIn = false;
   }
 
   $scope.isSignedIn = true;
+  $scope.logout = logout;
 
   setInterval( function(){
     console.log( 'interval', $rootScope.isSignedIn, $scope.isSignedIn );
