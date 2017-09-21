@@ -28,7 +28,6 @@ router.route( '/' )
   } );
 } )
 .post( ( req, res ) => {
-  console.log( 'post route of /', req.body );
   User.create( {
     name: req.body.name
   } )
