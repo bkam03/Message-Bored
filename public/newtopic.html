@@ -6,6 +6,10 @@
 </head>
 <body>
   <center>New Topic</center>
-  {{ topic }}
+  <div>{{ error }}</div>
+  <br />
+  <input type="text" ng-model="newTopic">
+  <br />
+  <button type="button" ng-click="submitNewTopic( newTopic )">Submit</button>
 </body>
 </html>
