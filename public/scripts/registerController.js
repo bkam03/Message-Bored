@@ -6,10 +6,8 @@ angular.module( 'app' )
 
 
   function addUser( username ){
-    console.log( 'addUser in controller', username );
     UserService.addUser( username )
     .then( ( newUser ) => {
-      console.log( 'new user created', newUser );
     } )
     .catch( ( err ) => {
       console.log( err );
