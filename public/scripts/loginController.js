@@ -1,5 +1,5 @@
 angular.module( 'app' )
-.controller( 'loginController', [ '$scope', 'localStorageService', 'UserService', function( $scope, localStorageService, UserService ){
+.controller( 'loginController', [ '$location', '$scope', 'localStorageService', 'UserService', function( $location, $scope, localStorageService, UserService ){
   $scope.error = '@';
 
   function signInUser( username ){
@@ -11,6 +11,8 @@ angular.module( 'app' )
         let { id, name } = user;
         console.log( 'found user', id, name );
         localStorageService.addUserToLocalStorage( id, name );
+
+        $location.path( '/' );
       } else {
         $scope.error = "username not found";
       }
@@ -26,3 +28,6 @@ angular.module( 'app' )
   $scope.getUserFromLocalStorage = localStorageService.getUserFromLocalStorage;
 
 } ] );
+
+
+
