@@ -1,13 +1,24 @@
 angular.module( 'app' )
 .service( 'signInOutService', [ '$http', function( $http ){
 
-  function localStorage( data ){
-    console.log( 'localStorage', window.localStorage );
+  let localStorage = window.localStorage;
 
+  function addUserToLocalStorage( username ){
+    return localStorage.setItem( 'username', username );
+  }
+
+  function removeUserFromLocalStorage(){
+    return localStorage.removeItem( 'username' );
+  }
+
+  function getUserFromLocalStorage(){
+    return localStorage.getItem( 'username' );
   }
 
   return {
-    localStorage
+    addUserToLocalStorage,
+    removeUserFromLocalStorage,
+    getUserFromLocalStorage
   };
 } ] );
 
