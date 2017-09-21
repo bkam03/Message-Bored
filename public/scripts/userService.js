@@ -40,6 +40,26 @@ angular.module( 'app' )
 
   function addUser( username ){
     console.log( 'addUser service', username );
+
+    let data = {
+      name: username
+    };
+
+    let config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+
+    return $http.post( '/api/users', data, config )
+    .then( ( user ) => {
+      console.log( 'user returned from server', user.data );
+    } )
+    .catch( ( err ) => {
+      console.log( err );
+    } );
+
+    /*post(url, data, [config]);*/
   }
 
   return {
