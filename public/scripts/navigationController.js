@@ -1,4 +1,4 @@
 angular.module( 'app' )
 .controller( 'navigationController', [ '$scope', function( $scope ){
-  $scope.test = "yes";
+  $scope.isSignedIn = true;
 } ] );
