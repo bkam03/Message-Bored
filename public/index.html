@@ -8,7 +8,8 @@
 </head>
   <body ng-app="app">
 
-  <div>
+  <div ng-controller='navigationController'>
+    Test: {{ test }}
     Navigation: <br>
     <a ng-href="/">Home</a>
 <!--
@@ -42,5 +43,7 @@
   <script src="./scripts/userService.js"></script>
 
   <script src="./scripts/registerController.js"></script>
+
+  <script src="./scripts/navigationController.js"></script>
   </body>
 </html>
