@@ -22,8 +22,8 @@
 <!--
     <a ng-href="">Latest</a>
     <a ng-href="">Topic ng-repeat</a>
-    <a ng-href="">Create New Topic</a>
 -->
+    <a ng-href="/newtopic" ng-show="isSignedIn">Create New Topic</a>
   </div>
 
   <br />
@@ -48,5 +48,7 @@
 
   <script src="./scripts/loginController.js"></script>
   <script src="./scripts/localStorageService.js"></script>
+
+  <script src="./scripts/newtopicController.js"></script>
   </body>
 </html>
