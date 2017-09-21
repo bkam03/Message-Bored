@@ -28,4 +28,12 @@ angular.module( 'app' )
 
   $locationProvider.html5Mode( true );
 } ] )
-.run( function(){} );
+.run( [ '$rootScope', function( $rootScope ){
+  $rootScope.isSignedIn = false;
+} ] );
+
+
+/*.run( [ 'APP_VERSION', '$rootScope', function( APP_VERSION, $rootScope ){
+        // initialize
+        $rootScope.version = APP_VERSION;
+    } ] );*/
