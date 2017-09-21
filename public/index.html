@@ -12,8 +12,8 @@
     Test:
     Navigation: <br>
     <a ng-href="/">Home</a>
+    <a ng-href="/login" ng-if="!isSignedIn">Login</a>
 <!--
-    <a ng-href="">Login</a>
     <a ng-href="">Logout</a>
 -->
     <a ng-href="/register" ng-if="!isSignedIn">Register</a>
@@ -45,5 +45,7 @@
   <script src="./scripts/registerController.js"></script>
 
   <script src="./scripts/navigationController.js"></script>
+
+  <script src="./scripts/loginController.js"></script>
   </body>
 </html>
