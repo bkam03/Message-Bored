@@ -22,6 +22,10 @@ angular.module( 'app' )
     templateUrl: 'login.html',
     controller: 'loginController'
   } )
+  .when( '/newtopic', {
+    templateUrl: 'newtopic.html',
+    controller: 'newtopicController'
+  } )
   .otherwise( {
     template: '<h1><center>Nope</center></h1>'
   } );
