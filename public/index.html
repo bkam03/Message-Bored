@@ -12,11 +12,11 @@
     Test:
     Navigation: <br>
     <a ng-href="/">Home</a>
-    <a ng-href="/login" ng-if="!isSignedIn">Login</a>
-<!--
-    <a ng-href="">Logout</a>
--->
-    <a ng-href="/register" ng-if="!isSignedIn">Register</a>
+    <a ng-href="/login" ng-hide="isSignedIn">Login</a>
+    <a ng-href="/register" ng-hide="isSignedIn">Register</a>
+
+    <a ng-click="logout" ng-show="isSignedIn">Logout</a>
+
     <a ng-href="/users">Users</a>
     ---------------------------
 <!--
