@@ -8,13 +8,14 @@ angular.module( 'app' )
   $scope.isSignedIn = true;
   $scope.logout = logout;
 
+  getTopics();
 
   function getTopics(){
     TopicService.getTopics()
     .then( ( topicList ) => {
       $scope.topicList = topicList;
-      $scope.$apply();
-    } )
+/*      $scope.$apply();
+*/    } )
     .catch( ( err ) => {
 
     } );
@@ -27,11 +28,11 @@ angular.module( 'app' )
       //change menu based on whether user is logged in or not
     if( $scope.isSignedIn !== $rootScope.isSignedIn ){
       $scope.isSignedIn = $rootScope.isSignedIn;
-      $scope.$apply();
+      //$scope.$apply is called in getTopics below,
     }
     //update topic list.
     getTopics();
-
+    $scope.$apply();
 
   }, 1000 );
 
