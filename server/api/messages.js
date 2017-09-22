@@ -37,14 +37,17 @@ router.get( '/by-topic/:topic_id', ( req, res ) => {
 } );
 
 router.post( '/', ( req, res ) => {
+  let message = req.body;
   Message.create( {
-    body: req.body.body
+    body: message.body,
+    author_id: message.author_id,
+    topic_id: message.topic_id
   } )
   .then( ( message ) => {
     res.send( message );
   } )
   .catch( ( err ) => {
-    res.send( err );
+    console.log( err );
   } );
 } );
 
