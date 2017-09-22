@@ -1,5 +1,5 @@
 angular.module( 'app' )
-.controller( 'topicController', [ '$scope', '$routeParams', 'MessageService', 'localStorageService', function( $scope, $routeParams, MessageService, localStorageService ){
+.controller( 'topicController', [ '$scope', '$routeParams', 'MessageService', 'localStorageService', 'TopicService', function( $scope, $routeParams, MessageService, localStorageService, TopicService ){
 
 
   /*
@@ -7,6 +7,16 @@ angular.module( 'app' )
     put topic up on view
     query message table for those from
   */
+  function getTopicOnLoad( topic_id ){
+    console.log( 'in topicLoad topic_id', topic_id );
+    TopicService.getTopicById( topic_id )
+    .then( ( topic ) => {
+      console.log( 'return from service, in controller', topic );
+    } )
+    .catch( ( err ) => {
+      console.log( err );
+    } );
+  }
 
   function handleMessagePost( message ){
     let messageObj = {
@@ -24,10 +34,10 @@ angular.module( 'app' )
     } );
 
   }
-
+  $scope.topic = "";
   $scope.messages = [];
-  $scope.handleMessagePost = handleMessagePost;
+  getTopicOnLoad( $routeParams.topic_id );
 
-  $scope.message = $routeParams.topic_id;
+  $scope.handleMessagePost = handleMessagePost;
 
 } ] );
