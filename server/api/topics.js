@@ -55,7 +55,12 @@ router.get( '/:id', ( req, res ) => {
     },
     include: [
       {
-        model: db.Message
+        model: db.Message,
+        include: [
+          {
+            model: db.User
+          }
+        ]
       }
     ]
   } )
