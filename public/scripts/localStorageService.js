@@ -15,14 +15,14 @@ angular.module( 'app' )
     return;
   }
 
-  function getUserFromLocalStorage(){
-    return localStorage.getItem( 'user' );
+  function getUserIdFromLocalStorage(){
+    return localStorage.getItem( 'id' );
   }
 
   return {
     addUserToLocalStorage,
     removeUserFromLocalStorage,
-    getUserFromLocalStorage
+    getUserIdFromLocalStorage
   };
 } ] );
 
