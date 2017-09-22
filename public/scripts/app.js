@@ -30,6 +30,10 @@ angular.module( 'app' )
     templateUrl: 'topic.html',
     controller: 'topicController'
   } )
+  .when( '/latestMessages', {
+    templateUrl: 'latestMessages.html',
+    controller: 'latestMessagesController'
+  })
   .otherwise( {
     template: '<h1><center>Nope</center></h1>'
   } );
