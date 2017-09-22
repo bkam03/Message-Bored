@@ -33,11 +33,14 @@ router.route( '/' )
 
 } )
 .post( ( req, res ) => {
+  console.log( 'post route received', req.body );
+  let data = req.body;
   Topic.create( {
-    topic: req.body.topic,
-    author_id: req.body.author_id
+    topic: data.topic,
+    created_by: data.userId
   } )
   .then( ( topic ) => {
+    console.log( 'posted to db', topic );
     res.send( topic );
   } )
   .catch( ( err ) => {
