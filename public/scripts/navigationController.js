@@ -13,7 +13,7 @@ angular.module( 'app' )
     TopicService.getTopics()
     .then( ( topicList ) => {
       $scope.topicList = topicList;
-      $scope.apply();
+      $scope.$apply();
     } )
     .catch( ( err ) => {
 
