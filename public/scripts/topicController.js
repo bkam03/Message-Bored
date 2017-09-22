@@ -12,6 +12,8 @@ angular.module( 'app' )
     TopicService.getTopicById( topic_id )
     .then( ( topic ) => {
       console.log( 'return from service, in controller', topic );
+      $scope.topic = topic.topic;
+      $scope.messages = topic.Messages;
     } )
     .catch( ( err ) => {
       console.log( err );

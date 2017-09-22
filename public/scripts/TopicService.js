@@ -42,7 +42,8 @@ angular.module( 'app' )
     console.log( 'in topic service', id );
     return $http.get( `/api/topics/${ id }`)
     .then( ( topic ) => {
-      console.log( 'in service, returned from server', topic );
+      console.log( 'in service, returned from server', topic.data );
+      return topic.data;
     } )
     .catch( ( err ) => {
       console.log( err );
