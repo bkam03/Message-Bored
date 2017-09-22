@@ -14,8 +14,8 @@ angular.module( 'app' )
 
 
   function showUserHandler( data ){
-    let userId = data.user.id;
-    UserService.getUser( userId )
+    let username = data.user.name;
+    UserService.getUser( username )
     .then( ( user ) => {
       $scope.user = user;
     } )
