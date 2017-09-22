@@ -26,7 +26,7 @@ angular.module( 'app' )
     templateUrl: 'newtopic.html',
     controller: 'newtopicController'
   } )
-  .when( '/topics/:id', {
+  .when( '/topics/:topic_id', {
     templateUrl: 'topic.html',
     controller: 'topicController'
   } )
