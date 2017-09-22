@@ -19,6 +19,9 @@ angular.module( 'app' )
     return $http.post( '/api/topics', data, config )
     .then( ( topic ) => {
       console.log( 'return from server in topicservice', topic );
+      let user = topic.data;
+      console.log( 'returning', user );
+      return user;
     } )
     .catch( ( err ) => {
       console.log( err );
