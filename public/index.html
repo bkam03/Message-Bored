@@ -19,14 +19,6 @@
 
     <a ng-href="/users">Users</a>
     ---------------------------
-<!--
-    <a ng-href="">Latest</a>
-    <a ng-href="">Topic ng-repeat</a>
-    <div ng-repeat="user in users">
-      <a ng-click="showUserHandler( this )">{{ user.name }}</p>
-      <br />
-    </div>
--->
     <div ng-repeat="topic in topicList">
     <a ng-href="/topics/{{topic.id}}">{{ topic.topic }}</a>
     </div>

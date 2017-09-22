@@ -14,8 +14,7 @@ angular.module( 'app' )
     TopicService.getTopics()
     .then( ( topicList ) => {
       $scope.topicList = topicList;
-/*      $scope.$apply();
-*/    } )
+    } )
     .catch( ( err ) => {
 
     } );

@@ -1,18 +1,9 @@
 angular.module( 'app' )
 .controller( 'topicController', [ '$scope', '$routeParams', 'MessageService', 'localStorageService', 'TopicService', function( $scope, $routeParams, MessageService, localStorageService, TopicService ){
 
-
-  /*
-    query topic by id
-    put topic up on view
-    query message table for those from
-  */
   function getTopicOnLoad( topic_id ){
-    console.log( 'in topicLoad topic_id', topic_id );
     TopicService.getTopicById( topic_id )
     .then( ( topic ) => {
-      console.log( 'return from service, in controller', topic );
-      $scope.topic = topic.topic;
       $scope.messages = topic.Messages;
     } )
     .catch( ( err ) => {
@@ -28,8 +19,6 @@ angular.module( 'app' )
     };
     MessageService.addMessage( messageObj )
     .then( ( message ) => {
-      console.log( 'in controller, MessageService returned ', message );
-      $scope.messages.push( message );
     } )
     .catch( ( err ) => {
       console.log( err );

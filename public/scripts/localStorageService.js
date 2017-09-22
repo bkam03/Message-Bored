@@ -4,7 +4,6 @@ angular.module( 'app' )
   let localStorage = window.localStorage;
 
   function addUserToLocalStorage( id, name ){
-    console.log( 'in local storage id, name', id, name );
     localStorage.setItem( 'id', id );
     return localStorage.setItem( 'name', name );
   }

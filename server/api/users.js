@@ -10,7 +10,6 @@ router.get('/:name', ( req, res ) => {
     }
   } )
   .then( ( user ) => {
-    console.log( 'in route, db returned', user );
     res.send( user );
   } )
   .catch( ( err ) => {

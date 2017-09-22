@@ -1,24 +1,9 @@
 angular.module( 'app' )
 .service( 'UserService', [ '$http', function( $http ){
 
-  /*var getUsers = function(){
-    return $http.get( '/users' )
-    .then( ( users ) => {
-      console.log( users );
-      return users.data;
-    } );
-
-  };*/
   var users = [];
 
-/*  $http.get( '/api/users' )
-  .then( ( users ) => {
-    console.log( 'user service', users );
-    users = users;
-  } );
-*/
   function getUsers() {
-    //$http
     return $http.get('/api/users')
     .then((users) => {
       return users.data;
@@ -29,10 +14,8 @@ angular.module( 'app' )
   }
 
   function getUser( username ){
-    console.log( 'firing getUser in userservice', username );
     return $http.get( `/api/users/${ username }` )
     .then( ( user ) => {
-      console.log( 'returned from database', user );
       let returnData = null;
       if( user.data ){
         returnData = user.data;
@@ -58,7 +41,6 @@ angular.module( 'app' )
 
     return $http.post( '/api/users', data, config )
     .then( ( user ) => {
-      console.log( 'in service, return data', user );
       return user.data;
     } )
     .catch( ( err ) => {

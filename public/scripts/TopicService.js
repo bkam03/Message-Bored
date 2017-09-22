@@ -3,7 +3,6 @@ angular.module( 'app' )
 
 
   function addTopic( topic, userId ){
-    console.log( 'addTopic in service', topic, userId );
 
     let data = {
       topic: topic,
@@ -39,10 +38,8 @@ angular.module( 'app' )
   }
 
   function getTopicById( id ){
-    console.log( 'in topic service', id );
     return $http.get( `/api/topics/${ id }`)
     .then( ( topic ) => {
-      console.log( 'in service, returned from server', topic.data );
       return topic.data;
     } )
     .catch( ( err ) => {
