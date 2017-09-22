@@ -5,7 +5,13 @@ angular.module( 'app' )
   function submitNewTopic( newTopic ){
     let userId = localStorageService.getUserIdFromLocalStorage();
     console.log( 'new topic', newTopic, userId );
-    TopicService.addTopic( newTopic, userId );
+    TopicService.addTopic( newTopic, userId )
+    .then( ( user ) => {
+      console.log( 'controller received ', user );
+    } )
+    .catch( ( err ) => {
+      console.log( err );
+    } );
 
   }
 
