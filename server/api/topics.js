@@ -47,5 +47,18 @@ router.route( '/' )
   } );
 } );
 
+router.get( '/:id', ( req, res ) => {
+  let topic_id = req.params.id;
+  console.log( 'in server, received', topic_id );
+  Topic.findOne( {
+    where: {
+      id: topic_id
+    }
+  } )
+  .then( ( topic ) => {
+    console.log( 'in server, returned from db', topic );
+  } );
+} );
+
 
 module.exports = router;
