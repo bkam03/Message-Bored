@@ -8,7 +8,7 @@
   <h2>Topic:{{ topic }}</h2>
 
   <div class="messages" ng-repeat="message in messages">
-    {{ message.body }}
+    {{message.User.name}}: {{ message.body }}
 
   </div>
 
