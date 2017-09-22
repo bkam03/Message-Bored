@@ -1,5 +1,5 @@
 angular.module( 'app' )
-.controller( 'topicController', [ '$scope', '$routeParams', 'TopicService', 'localStorageService', function( $scope, $routeParams, TopicService, localStorageService ){
+.controller( 'topicController', [ '$scope', '$routeParams', 'MessageService', 'localStorageService', function( $scope, $routeParams, MessageService, localStorageService ){
 
 
   /*
@@ -10,14 +10,22 @@ angular.module( 'app' )
 
   function handleMessagePost( message ){
     let messageObj = {
-      message: message,
+      body: message,
       topic_id: $routeParams.topic_id,
       author_id: localStorageService.getUserIdFromLocalStorage()
     };
+    MessageService.addMessage( messageObj )
+    .then( ( message ) => {
+      console.log( 'in controller, MessageService returned ', message );
+      $scope.messages.push( message );
+    } )
+    .catch( ( err ) => {
+      console.log( err );
+    } );
 
-    console.log( messageObj );
   }
 
+  $scope.messages = [];
   $scope.handleMessagePost = handleMessagePost;
 
   $scope.message = $routeParams.topic_id;
