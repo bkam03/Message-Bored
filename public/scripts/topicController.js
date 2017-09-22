@@ -1,5 +1,5 @@
 angular.module( 'app' )
-.controller( 'topicController', [ '$scope', '$routeParams', 'TopicService', function( $scope, $routeParams, TopicService ){
+.controller( 'topicController', [ '$scope', '$routeParams', 'TopicService', 'localStorageService', function( $scope, $routeParams, TopicService, localStorageService ){
 
 
   /*
@@ -9,11 +9,17 @@ angular.module( 'app' )
   */
 
   function handleMessagePost( message ){
-    console.log( message );
+    let messageObj = {
+      message: message,
+      topic_id: $routeParams.topic_id,
+      author_id: localStorageService.getUserIdFromLocalStorage()
+    };
+
+    console.log( messageObj );
   }
 
   $scope.handleMessagePost = handleMessagePost;
 
-  $scope.message = "";
+  $scope.message = $routeParams.topic_id;
 
 } ] );
