@@ -6,15 +6,8 @@
 </head>
 <body>
   <div ng-repeat="user in users">
-  <a ng-click="showUserHandler( this )">{{ user.name }}</p>
+  <a ng-href="/users/{{user.id}}">{{ user.name }}</p>
     <br />
-  </div>
-
-  <div>
-    {{ user.name }}
-    Id: {{ user.id }}
-    Joined: {{ user.createdAt }}
-
   </div>
 
 </body>
