@@ -23,5 +23,9 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.8.4"
   },
-    "proxy": "http://localhost:3000/api"
+  "proxy": "http://localhost:3000/api",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp-sass": "^3.1.0"
+  }
 }
