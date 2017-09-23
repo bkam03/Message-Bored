@@ -3,7 +3,6 @@ angular.module( 'app' )
 
   UserService.getUserById( $routeParams.user_id )
   .then( ( user ) => {
-    console.log( 'returned to controller', user );
     $scope.user = user;
     $scope.messages = user.Messages;
   } )
