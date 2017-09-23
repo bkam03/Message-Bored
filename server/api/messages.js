@@ -1,21 +1,29 @@
 const express = require( 'express' );
 
-const { Message } = require( '../models' );
+const db = require( '../models' );
+
+const Message = db.Message;
 
 const router = express.Router();
 
 
 router.get( '/latest', ( req, res ) => {
-  console.log( 'in server' );
   Message.findAll({
     limit: 10,
     where: {
 
     },
+    include : [
+      {
+        model: db.User
+      },
+      {
+        model: db.Topic
+      }
+    ],
     order: [ [ 'createdAt', 'DESC'] ]
   } )
   .then( ( messages ) => {
-    console.log( 'returned from db', messages );
     res.send( messages );
   } )
   .catch( ( err ) => {
