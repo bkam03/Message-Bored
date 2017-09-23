@@ -13,7 +13,7 @@ angular.module( 'app' )
 
 
 
-  function showUserHandler( data ){
+/*  function showUserHandler( data ){
     let username = data.user.name;
     UserService.getUser( username )
     .then( ( user ) => {
@@ -25,7 +25,7 @@ angular.module( 'app' )
   }
 
   $scope.showUserHandler = showUserHandler;
-
+*/
 /*  $scope.getUser = UserService.getUser;
 */
 } ] );
