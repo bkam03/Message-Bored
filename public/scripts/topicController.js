@@ -4,6 +4,7 @@ angular.module( 'app' )
   function getTopicOnLoad( topic_id ){
     TopicService.getTopicById( topic_id )
     .then( ( topic ) => {
+      $scope.topic = topic;
       $scope.messages = topic.Messages;
     } )
     .catch( ( err ) => {
@@ -19,6 +20,7 @@ angular.module( 'app' )
     };
     MessageService.addMessage( messageObj )
     .then( ( message ) => {
+      $scope.messages.push( message );
     } )
     .catch( ( err ) => {
       console.log( err );
