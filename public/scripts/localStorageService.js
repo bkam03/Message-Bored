@@ -18,10 +18,15 @@ angular.module( 'app' )
     return localStorage.getItem( 'id' );
   }
 
+  function getUserNameFromLocalStorage(){
+    return localStorage.getItem( 'name' );
+  }
+
   return {
     addUserToLocalStorage,
     removeUserFromLocalStorage,
-    getUserIdFromLocalStorage
+    getUserIdFromLocalStorage,
+    getUserNameFromLocalStorage
   };
 } ] );
 
