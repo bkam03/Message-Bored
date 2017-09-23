@@ -6,5 +6,15 @@
 </head>
 <body>
   <center>User</center>
+  User: {{ user.name }}
+  Joined: {{ user.createdAt }}
+  <br />
+  <div ng-repeat="message in messages">
+  #
+   {{ message.Topic.topic }}
+   {{ message.body }}
+   {{ message.createdAt }}
+   <br />
+  </div>
 </body>
 </html>
