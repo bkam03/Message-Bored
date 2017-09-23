@@ -27,6 +27,20 @@ angular.module( 'app' )
     } );
   }
 
+  function getUserById( user_id ){
+    return $http.get( `/api/users/user/${ user_id }` )
+    .then( ( user ) => {
+      let returnData = null;
+      if( user.data ){
+        returnData = user.data;
+      }
+      return returnData;
+    } )
+    .catch( ( err ) => {
+      console.log( err );
+    } );
+  }
+
   function addUser( username ){
 
     let data = {
@@ -49,9 +63,10 @@ angular.module( 'app' )
   }
 
   return {
-    getUsers: getUsers,
-    getUser: getUser,
-    addUser: addUser
+    getUsers,
+    getUser,
+    getUserById,
+    addUser
   };
 
 } ] );
