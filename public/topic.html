@@ -5,10 +5,13 @@
   <title>Document</title>
 </head>
 <body>
-  <h2>Topic:{{ topic }}</h2>
+  <h2>Topic:{{ topic.topic }}</h2>
+  created: {{ topic.createdAt }}
+  By: {{ topic.User.name }}
+
 
   <div class="messages" ng-repeat="message in messages">
-    {{message.User.name}}: {{ message.body }}
+    {{message.User.name}}: {{ message.body }}  on {{ message.createdAt }}
 
   </div>
 
