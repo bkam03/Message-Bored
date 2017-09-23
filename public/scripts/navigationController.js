@@ -22,7 +22,7 @@ angular.module( 'app' )
 
 
 
-  setInterval( function(){
+/*  setInterval( function(){
 
       //change menu based on whether user is logged in or not
     if( $scope.isSignedIn !== $rootScope.isSignedIn ){
@@ -33,7 +33,7 @@ angular.module( 'app' )
     getTopics();
     $scope.$apply();
 
-  }, 1000 );
+  }, 1000 );*/
 
 
 } ] );
