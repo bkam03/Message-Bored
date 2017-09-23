@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Message Bored</title>
-  <!-- need this for views -->
+<link rel="stylesheet" href="css/app.css">  <!-- need this for views -->
   <base href="/">
 </head>
   <body ng-app="app">
@@ -20,17 +20,15 @@
     ---------------------------
     <a ng-href="/latestMessages">Latest</a>
     <div ng-repeat="topic in topicList">
-    <a ng-href="/topics/{{topic.id}}">{{ topic.topic }}</a>
+      <a ng-href="/topics/{{topic.id}}">{{ topic.topic }}</a>
     </div>
 
     <a ng-href="/newtopic" ng-show="isSignedIn">Create New Topic</a>
   </div>
 
-  <br />
-  <br />
-
-
+  <div class="content">
     <ng-view></ng-view>
+  </div>
 <!-- WHERE DIFFERENT VIEWS APPEAR -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" type="text/javascript"></script>
