@@ -14,6 +14,10 @@ angular.module( 'app' )
     templateUrl: 'users.html',
     controller: 'UserController'
   } )
+  .when( '/users/:user_id', {
+    templateUrl: 'user.html',
+    controller: 'singleUserController'
+  } )
   .when( '/register', {
     templateUrl: 'register.html',
     controller: 'registerController'
