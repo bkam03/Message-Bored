@@ -1,6 +1,7 @@
 const express = require( 'express' );
 
-const { User } = require( '../models');
+const db = require( '../models');
+const User = db.User;
 const router = express.Router();
 
 router.get('/:name', ( req, res ) => {
@@ -8,6 +9,31 @@ router.get('/:name', ( req, res ) => {
     where: {
       name: req.params.name
     }
+  } )
+  .then( ( user ) => {
+    res.send( user );
+  } )
+  .catch( ( err ) => {
+    console.log( err );
+  } );
+} );
+
+router.get('/user/:id', ( req, res ) => {
+  User.findOne( {
+    where: {
+      id: req.params.id
+    },
+    include : [
+      {
+        model: db.Message,
+        include : [
+          {
+            model: db.Topic
+          }
+        ],
+      }
+    ],
+    order: [ [ db.Message, 'createdAt', 'ASC' ] ]
   } )
   .then( ( user ) => {
     res.send( user );
