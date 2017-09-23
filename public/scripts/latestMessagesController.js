@@ -1,3 +1,10 @@
 angular.module( 'app' )
-.controller( 'latestMessagesController', [ '$scope', function( $scope ){
+.controller( 'latestMessagesController', [ '$scope', 'MessageService', function( $scope, MessageService ){
+
+  MessageService.getLatestMessages()
+  .then( ( messages ) => {
+    console.log( 'returned to controller', messages );
+  } );
+
+
 } ] );
