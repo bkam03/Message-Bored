@@ -6,5 +6,13 @@
 </head>
 <body>
   <center>Latest Messages</center>
+
+  <div ng-repeat="message in messages">
+    {{ message.Topic.topic }}
+    <br />
+    {{ message.body }}
+    <br />
+    {{ message.User.name }} on {{ message.createdAt }}
+  </div>
 </body>
 </html>

@@ -6,6 +6,7 @@ const router = express.Router();
 
 
 router.get( '/latest', ( req, res ) => {
+  console.log( 'in server' );
   Message.findAll({
     limit: 10,
     where: {
@@ -14,6 +15,7 @@ router.get( '/latest', ( req, res ) => {
     order: [ [ 'createdAt', 'DESC'] ]
   } )
   .then( ( messages ) => {
+    console.log( 'returned from db', messages );
     res.send( messages );
   } )
   .catch( ( err ) => {
