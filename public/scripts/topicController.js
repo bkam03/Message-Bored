@@ -20,7 +20,12 @@ angular.module( 'app' )
     };
     MessageService.addMessage( messageObj )
     .then( ( message ) => {
-      $scope.messages.push( message );
+      console.log( message );
+      let postingMessage = Object.assign( {}, message );
+      postingMessage.User = {
+        name: localStorageService.getUserNameFromLocalStorage()
+      };
+      $scope.messages.push( postingMessage );
     } )
     .catch( ( err ) => {
       console.log( err );
