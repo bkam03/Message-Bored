@@ -18,8 +18,23 @@ angular.module( 'app' )
     } );
   }
 
+
+  function getLatestMessages(){
+    console.log( 'in service' );
+    return $http.get( '/api/messages/latest' )
+    .then( ( messages ) => {
+      let data = messages;
+      console.log( 'returned to service', data );
+      return data;
+    } )
+    .catch( ( err ) => {
+      console.log( err );
+    } );
+  }
+
   return {
-    addMessage
+    addMessage,
+    getLatestMessages
   };
 
 } ] );
