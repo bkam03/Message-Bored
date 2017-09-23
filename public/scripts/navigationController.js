@@ -1,8 +1,10 @@
 angular.module( 'app' )
-.controller( 'navigationController', [ '$scope', '$rootScope', 'TopicService', function( $scope, $rootScope, TopicService ){
+.controller( 'navigationController', [ '$location', '$scope', '$rootScope', 'TopicService', function( $location, $scope, $rootScope, TopicService ){
 
   function logout(){
     $rootScope.isSignedIn = false;
+    $location.path( '/' );
+
   }
 
   $scope.isSignedIn = true;
@@ -22,7 +24,7 @@ angular.module( 'app' )
 
 
 
-/*  setInterval( function(){
+  setInterval( function(){
 
       //change menu based on whether user is logged in or not
     if( $scope.isSignedIn !== $rootScope.isSignedIn ){
@@ -33,7 +35,7 @@ angular.module( 'app' )
     getTopics();
     $scope.$apply();
 
-  }, 1000 );*/
+  }, 1000 );
 
 
 } ] );
