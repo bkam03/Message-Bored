@@ -1,0 +1,38 @@
+
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  a {
+    margin: 2px;
+  }
+}
+
+
+.content {
+  display: flex;
+  min-height: 400px;
+
+  .topicMenu {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    border: 1px solid black;
+    padding: 5px;
+    min-width: 15%;
+  }
+
+  .view {
+    width: 85%;
+    border: 1px solid black;
+    padding: 5px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
