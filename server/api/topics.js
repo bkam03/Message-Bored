@@ -61,8 +61,13 @@ router.get( '/:id', ( req, res ) => {
             model: db.User
           }
         ]
+      },
+      {
+        model: db.User
       }
-    ]
+    ],
+    order: [ [ db.Message, 'createdAt', 'ASC' ] ]
+
   } )
   .then( ( topic ) => {
     res.send( topic );
