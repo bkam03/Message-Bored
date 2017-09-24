@@ -5,12 +5,11 @@
   <title>Login</title>
 </head>
 <body>
-  <center>Login</center>
-  <div>{{ error }}</div>
-  <input type="text" ng-model="username">
-  <br />
-  {{ username }}
-  <br />
-  <button type="button" ng-click="signInUser(username)">Logi</button>
+  <div class="form">
+    <h2>Login</h2>
+    <div>{{ error }}</div>
+    <input type="text" ng-model="username">
+    <button type="button" ng-click="signInUser(username)">Login</button>
+  </div>
 </body>
 </html>
