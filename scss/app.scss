@@ -5,7 +5,10 @@
   justify-content: space-around;
   border: 1px solid black;
   a {
-    margin: 2px;
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    border: 1px dotted black;
   }
 }
 
@@ -30,9 +33,24 @@
     border: 1px solid black;
     padding: 5px;
   }
+
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+.viewContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.itemContainer {
+  width: 100%;
+}
+
+.message {
+  border: 1px dotted black;
 }
