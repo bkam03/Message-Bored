@@ -1,6 +1,6 @@
 angular.module( 'app' )
 .controller( 'loginController', [ '$location', '$scope', '$rootScope', 'localStorageService', 'UserService', function( $location, $scope, $rootScope, localStorageService, UserService ){
-  $scope.error = '@';
+  $scope.error = '';
 
   function signInUser( username ){
     $scope.error = "";
