@@ -1,7 +1,4 @@
-
-
 angular.module( 'app', [ 'ngRoute' ] );
-
 
 angular.module( 'app' )
 .config( [ '$routeProvider', '$locationProvider', function( $routeProvider, $locationProvider ){
@@ -47,9 +44,3 @@ angular.module( 'app' )
 .run( [ '$rootScope', function( $rootScope ){
   $rootScope.isSignedIn = false;
 } ] );
-
-
-/*.run( [ 'APP_VERSION', '$rootScope', function( APP_VERSION, $rootScope ){
-        // initialize
-        $rootScope.version = APP_VERSION;
-    } ] );*/

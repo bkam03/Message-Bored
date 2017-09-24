@@ -3,11 +3,9 @@ angular.module( 'app' )
 
   $scope.messages= [];
 
-
   MessageService.getLatestMessages()
   .then( ( messages ) => {
     $scope.messages = messages;
   } );
-
 
 } ] );

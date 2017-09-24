@@ -29,18 +29,3 @@ angular.module( 'app' )
     getUserNameFromLocalStorage
   };
 } ] );
-
-
-/*
-set
-localStorage.setItem('myCat', 'Tom');
-
-get
-var cat = localStorage.getItem("myCat");
-
-
-delete
-localStorage.removeItem("myCat");
-
-
-*/

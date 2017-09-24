@@ -18,7 +18,6 @@ angular.module( 'app' )
     } );
   }
 
-
   function getLatestMessages(){
     return $http.get( '/api/messages/latest' )
     .then( ( messages ) => {

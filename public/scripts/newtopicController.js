@@ -11,7 +11,6 @@ angular.module( 'app' )
     .catch( ( err ) => {
       $scope.error = err;
     } );
-
   }
 
   $scope.newtopic= "";

@@ -30,7 +30,6 @@ angular.module( 'app' )
   getTopics();
 
 
-
   setInterval( function(){
     isUserSignedIn();
       //change menu based on whether user is logged in or not

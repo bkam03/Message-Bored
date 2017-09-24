@@ -20,7 +20,6 @@ angular.module( 'app' )
     };
     MessageService.addMessage( messageObj )
     .then( ( message ) => {
-      console.log( message );
       let postingMessage = Object.assign( {}, message );
       postingMessage.User = {
         name: localStorageService.getUserNameFromLocalStorage()
@@ -33,11 +32,13 @@ angular.module( 'app' )
     } );
 
   }
+
   $scope.topic = "";
   $scope.messages = [];
   $scope.isSignedIn = $rootScope.isSignedIn;
+  $scope.handleMessagePost = handleMessagePost;
+
   getTopicOnLoad( $routeParams.topic_id );
 
-  $scope.handleMessagePost = handleMessagePost;
 
 } ] );
