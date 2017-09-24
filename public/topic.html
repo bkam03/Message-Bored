@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <div class="viewContainer">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="viewContainer">
 
-    <h2>{{ topic.topic }}</h2>
-    created: {{ topic.createdAt }}
-    <br />
-    By: {{ topic.User.name }}
-
-    <div class="itemContainer">
-      <div class="item" ng-repeat="message in messages">
-        {{message.User.name}}: {{ message.body }}  on {{ message.createdAt }}
-      </div>
-    </div>
-
-    <div ng-show="isSignedIn" class="form">
-      <input type="text" ng-model="message">
+      <h2>{{ topic.topic }}</h2>
+      created: {{ topic.createdAt }}
       <br />
-      <button type="button" ng-click="handleMessagePost( message )">Post</button>
+      By: {{ topic.User.name }}
+
+      <div class="itemContainer">
+        <div class="item" ng-repeat="message in messages">
+          {{message.User.name}}: {{ message.body }}  on {{ message.createdAt }}
+        </div>
+      </div>
+
+      <div ng-show="isSignedIn" class="form">
+        <input type="text" ng-model="message">
+        <br />
+        <button type="button" ng-click="handleMessagePost( message )">Post</button>
+      </div>
+
     </div>
 
-  </div>
-
-</body>
+  </body>
 </html>

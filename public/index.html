@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Message Bored</title>
-<link rel="stylesheet" href="css/app.css">
-<!-- need this for views -->
-  <base href="/">
-</head>
-  <body ng-app="app">
-  <center><h1>Message Bored</h1></center>
-  <div ng-controller='navigationController' class="menu">
-    <a ng-href="/">
-      <div>Home</div>
-    </a>
-    <a ng-href="/login" ng-hide="isSignedIn">
-    <div>Login</div>
-    </a>
-    <a ng-href="/register" ng-hide="isSignedIn">
-      <div>Register</div>
-    </a>
-    <a ng-click="logout()" ng-show="isSignedIn">
-      <div>Logout</div>
-    </a>
-    <a ng-href="/users">
-      <div>Users</div>
-    </a>
-    <a ng-href="/latestMessages">
-      <div>Latest</div>
-    </a>
-  </div>
-
-  <div class="content">
-
-    <div ng-controller='navigationController' class="topicMenu">
-
-      <a ng-href="/topics/{{topic.id}}" ng-repeat="topic in topicList" class="topic">
-        <div>
-          {{ topic.topic }}
-        </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>Message Bored</title>
+  <link rel="stylesheet" href="css/app.css">
+  <!-- need this for views -->
+    <base href="/">
+  </head>
+    <body ng-app="app">
+    <center><h1>Message Bored</h1></center>
+    <div ng-controller='navigationController' class="menu">
+      <a ng-href="/">
+        <div>Home</div>
       </a>
-
-      <a ng-href="/newtopic" ng-show="isSignedIn" class="topic">
-        <div>
-          Create New Topic
-        </div>
+      <a ng-href="/login" ng-hide="isSignedIn">
+      <div>Login</div>
+      </a>
+      <a ng-href="/register" ng-hide="isSignedIn">
+        <div>Register</div>
+      </a>
+      <a ng-click="logout()" ng-show="isSignedIn">
+        <div>Logout</div>
+      </a>
+      <a ng-href="/users">
+        <div>Users</div>
+      </a>
+      <a ng-href="/latestMessages">
+        <div>Latest</div>
       </a>
     </div>
 
-    <div class="view">
-<!-- WHERE DIFFERENT VIEWS APPEAR -->
-      <ng-view></ng-view>
+    <div class="content">
+
+      <div ng-controller='navigationController' class="topicMenu">
+
+        <a ng-href="/topics/{{topic.id}}" ng-repeat="topic in topicList" class="topic">
+          <div>
+            {{ topic.topic }}
+          </div>
+        </a>
+
+        <a ng-href="/newtopic" ng-show="isSignedIn" class="topic">
+          <div>
+            Create New Topic
+          </div>
+        </a>
+      </div>
+
+      <div class="view">
+  <!-- WHERE DIFFERENT VIEWS APPEAR -->
+        <ng-view></ng-view>
+      </div>
+
     </div>
 
-  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js" type="text/javascript"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js" type="text/javascript"></script>
+    <script src="./scripts/app.js" type="text/javascript"></script>
+    <script src="./scripts/homeController.js"></script>
 
-  <script src="./scripts/app.js" type="text/javascript"></script>
-  <script src="./scripts/homeController.js"></script>
+    <script src="./scripts/UserController.js"></script>
+    <script src="./scripts/userService.js"></script>
 
-  <script src="./scripts/UserController.js"></script>
-  <script src="./scripts/userService.js"></script>
+    <script src="./scripts/registerController.js"></script>
 
-  <script src="./scripts/registerController.js"></script>
+    <script src="./scripts/navigationController.js"></script>
 
-  <script src="./scripts/navigationController.js"></script>
+    <script src="./scripts/loginController.js"></script>
+    <script src="./scripts/localStorageService.js"></script>
 
-  <script src="./scripts/loginController.js"></script>
-  <script src="./scripts/localStorageService.js"></script>
+    <script src="./scripts/newtopicController.js"></script>
+    <script src="./scripts/TopicService.js"></script>
 
-  <script src="./scripts/newtopicController.js"></script>
-  <script src="./scripts/TopicService.js"></script>
+    <script src="./scripts/topicController.js"></script>
 
-  <script src="./scripts/topicController.js"></script>
+    <script src="./scripts/MessageService.js"></script>
 
-  <script src="./scripts/MessageService.js"></script>
+    <script src="./scripts/latestMessagesController.js"></script>
 
-  <script src="./scripts/latestMessagesController.js"></script>
-
-  <script src="./scripts/singleUserController.js"></script>
+    <script src="./scripts/singleUserController.js"></script>
   </body>
 </html>

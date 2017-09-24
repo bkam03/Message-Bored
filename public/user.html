@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <div class="viewContainer">
-    <h2>User</h2>
-    User: {{ user.name }}
-    Joined: {{ user.createdAt }}
-    <br />
-    <br />
-    <div ng-repeat="message in messages">
-    #
-     {{ message.Topic.topic }}
-     {{ message.body }}
-     {{ message.createdAt }}
-     <br />
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="viewContainer">
+      <h2>User</h2>
+      User: {{ user.name }}
+      Joined: {{ user.createdAt }}
+      <br />
+      <br />
+      <div ng-repeat="message in messages">
+      #
+       {{ message.Topic.topic }}
+       {{ message.body }}
+       {{ message.createdAt }}
+       <br />
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

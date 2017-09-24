@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Latest</title>
-</head>
-<body>
-  <div class="viewContainer">
+  <head>
+    <meta charset="UTF-8">
+    <title>Latest</title>
+  </head>
+  <body>
+    <div class="viewContainer">
 
-    <h2>Latest Messages</h2>
-    <div class="itemContainer">
-      <div ng-repeat="message in messages" class="item">
-        Topic: {{ message.Topic.topic }}
-        <br />
-        {{ message.body }}
-        <br />
-        Posted: {{ message.User.name }} on {{ message.createdAt }}
+      <h2>Latest Messages</h2>
+      <div class="itemContainer">
+        <div ng-repeat="message in messages" class="item">
+          Topic: {{ message.Topic.topic }}
+          <br />
+          {{ message.body }}
+          <br />
+          Posted: {{ message.User.name }} on {{ message.createdAt }}
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
