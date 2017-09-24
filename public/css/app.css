@@ -46,3 +46,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center; }
+
+.error {
+  color: red; }
