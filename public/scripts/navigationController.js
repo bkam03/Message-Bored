@@ -21,10 +21,9 @@ angular.module( 'app' )
   function isUserSignedIn(){
     let isUserSignedIn = localStorageService.getUserIdFromLocalStorage();
     $rootScope.isSignedIn = isUserSignedIn ? true : false;
-    console.log( 'signed in?', $scope.isSignedIn );
   }
 
-  $scope.isSignedIn = true;
+  $scope.isSignedIn = "";
   $scope.logout = logout;
 
   isUserSignedIn();
@@ -33,7 +32,7 @@ angular.module( 'app' )
 
 
   setInterval( function(){
-
+    isUserSignedIn();
       //change menu based on whether user is logged in or not
     if( $scope.isSignedIn !== $rootScope.isSignedIn ){
       $scope.isSignedIn = $rootScope.isSignedIn;
