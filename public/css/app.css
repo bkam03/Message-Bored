@@ -34,6 +34,10 @@ a {
 
 .itemContainer {
   width: 100%; }
+  .itemContainer .message {
+    border: 1px dotted black; }
 
-.message {
-  border: 1px dotted black; }
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
