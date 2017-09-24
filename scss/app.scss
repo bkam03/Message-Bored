@@ -26,6 +26,15 @@
     border: 1px solid black;
     padding: 5px;
     min-width: 15%;
+
+    .topic {
+      width: 100%;
+      border: 1px dotted black;
+      div {
+        text-align: center;
+      }
+    }
+
   }
 
   .view {
