@@ -5,7 +5,7 @@
   .menu a {
     display: flex;
     justify-content: center;
-    width: 20%;
+    flex-grow: 1;
     border: 1px dotted black; }
 
 .content {
@@ -40,7 +40,8 @@ a {
 .itemContainer {
   width: 100%; }
   .itemContainer .item {
-    border: 1px dotted black; }
+    border: 1px dotted black;
+    margin: 8px; }
 
 .form {
   display: flex;

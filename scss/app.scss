@@ -7,7 +7,7 @@
   a {
     display: flex;
     justify-content: center;
-    width: 20%;
+    flex-grow: 1;
     border: 1px dotted black;
   }
 }
