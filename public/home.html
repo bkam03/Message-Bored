@@ -7,6 +7,12 @@
   <body>
     <div class="viewContainer">
       <h2>This is Home.</h2>
+      <div>
+        <div ng-repeat="message in messages">
+          {{ message.User.name }}:  {{ message.body }}
+          <br />
+        </div>
+      </div>
     </div>
   </body>
 </html>
