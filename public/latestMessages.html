@@ -5,14 +5,18 @@
   <title>Latest</title>
 </head>
 <body>
-  <center>Latest Messages</center>
+  <div class="viewContainer">
 
-  <div ng-repeat="message in messages">
-    {{ message.Topic.topic }}
-    <br />
-    {{ message.body }}
-    <br />
-    {{ message.User.name }} on {{ message.createdAt }}
+    <h2>Latest Messages</h2>
+    <div class="itemContainer">
+      <div ng-repeat="message in messages" class="message">
+        Topic: {{ message.Topic.topic }}
+        <br />
+        {{ message.body }}
+        <br />
+        Posted: {{ message.User.name }} on {{ message.createdAt }}
+      </div>
+    </div>
   </div>
 </body>
 </html>
