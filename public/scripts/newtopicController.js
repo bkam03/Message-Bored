@@ -1,11 +1,12 @@
 
 angular.module( 'app' )
-.controller( 'newtopicController', [ '$scope', 'TopicService','localStorageService', function( $scope, TopicService, localStorageService ){
+.controller( 'newtopicController', [ '$scope', '$location', 'TopicService','localStorageService', function( $scope, $location, TopicService, localStorageService ){
 
   function submitNewTopic( newTopic ){
     let userId = localStorageService.getUserIdFromLocalStorage();
     TopicService.addTopic( newTopic, userId )
-    .then( ( user ) => {
+    .then( ( topic ) => {
+      $location.path( `/topics/${ topic.id }` );
     } )
     .catch( ( err ) => {
       $scope.error = err;
