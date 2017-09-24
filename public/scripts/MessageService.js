@@ -29,9 +29,20 @@ angular.module( 'app' )
     } );
   }
 
+  function getAllMessages(){
+    return $http.get( '/api/messages')
+    .then( ( messages ) => {
+      return messages.data;
+    } )
+    .catch( ( err ) => {
+      console.log( err );
+    } );
+  }
+
   return {
     addMessage,
-    getLatestMessages
+    getLatestMessages,
+    getAllMessages
   };
 
 } ] );
