@@ -5,20 +5,23 @@
   <title>Document</title>
 </head>
 <body>
-  <h2>Topic:{{ topic.topic }}</h2>
-  created: {{ topic.createdAt }}
-  By: {{ topic.User.name }}
+  <div class="viewContainer">
+
+    <h2>Topic:{{ topic.topic }}</h2>
+    created: {{ topic.createdAt }}
+    By: {{ topic.User.name }}
 
 
-  <div class="messages" ng-repeat="message in messages">
-    {{message.User.name}}: {{ message.body }}  on {{ message.createdAt }}
+    <div class="messages" ng-repeat="message in messages">
+      {{message.User.name}}: {{ message.body }}  on {{ message.createdAt }}
 
-  </div>
+    </div>
 
-  <div>
-    <input type="text" ng-model="message">
-    <br />
-    <button type="button" ng-click="handleMessagePost( message )">Post</button>
+    <div ng-show="isSignedIn" class="form">
+      <input type="text" ng-model="message">
+      <br />
+      <button type="button" ng-click="handleMessagePost( message )">Post</button>
+    </div>
 
   </div>
 
