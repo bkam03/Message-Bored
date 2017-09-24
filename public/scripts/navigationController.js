@@ -1,16 +1,12 @@
 angular.module( 'app' )
-.controller( 'navigationController', [ '$location', '$scope', '$rootScope', 'TopicService', function( $location, $scope, $rootScope, TopicService ){
+.controller( 'navigationController', [ '$location', '$scope', '$rootScope', 'TopicService', 'localStorageService', function( $location, $scope, $rootScope, TopicService, localStorageService ){
 
   function logout(){
+    localStorageService.removeUserFromLocalStorage();
     $rootScope.isSignedIn = false;
     $location.path( '/' );
 
   }
-
-  $scope.isSignedIn = true;
-  $scope.logout = logout;
-
-  getTopics();
 
   function getTopics(){
     TopicService.getTopics()
@@ -21,6 +17,17 @@ angular.module( 'app' )
 
     } );
   }
+
+  function isUserSignedIn(){
+    let isUserSignedIn = localStorageService.getUserIdFromLocalStorage();
+    console.log( 'signed in?', isUserSignedIn );
+  }
+
+  $scope.isSignedIn = true;
+  $scope.logout = logout;
+
+  isUserSignedIn();
+  getTopics();
 
 
 
