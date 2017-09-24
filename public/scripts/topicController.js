@@ -1,5 +1,5 @@
 angular.module( 'app' )
-.controller( 'topicController', [ '$scope', '$routeParams', 'MessageService', 'localStorageService', 'TopicService', function( $scope, $routeParams, MessageService, localStorageService, TopicService ){
+.controller( 'topicController', [ '$scope', '$rootScope', '$routeParams', 'MessageService', 'localStorageService', 'TopicService', function( $scope, $rootScope, $routeParams, MessageService, localStorageService, TopicService ){
 
   function getTopicOnLoad( topic_id ){
     TopicService.getTopicById( topic_id )
@@ -34,6 +34,7 @@ angular.module( 'app' )
   }
   $scope.topic = "";
   $scope.messages = [];
+  $scope.isSignedIn = $rootScope.isSignedIn;
   getTopicOnLoad( $routeParams.topic_id );
 
   $scope.handleMessagePost = handleMessagePost;
