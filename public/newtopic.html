@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <center>New Topic</center>
-  <div>{{ error }}</div>
-  <br />
-  <input type="text" ng-model="newTopic">
-  <br />
-  <button type="button" ng-click="submitNewTopic( newTopic )">Submit</button>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="viewContainer">
+
+      <h2>New Topic</h2>
+      <div>{{ error }}</div>
+      <input type="text" ng-model="newTopic">
+      <button type="button" ng-click="submitNewTopic( newTopic )">Submit</button>
+    </div>
+  </body>
 </html>
