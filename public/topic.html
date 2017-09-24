@@ -7,14 +7,15 @@
 <body>
   <div class="viewContainer">
 
-    <h2>Topic:{{ topic.topic }}</h2>
+    <h2>{{ topic.topic }}</h2>
     created: {{ topic.createdAt }}
+    <br />
     By: {{ topic.User.name }}
 
-
-    <div class="messages" ng-repeat="message in messages">
-      {{message.User.name}}: {{ message.body }}  on {{ message.createdAt }}
-
+    <div class="itemContainer">
+      <div class="item" ng-repeat="message in messages">
+        {{message.User.name}}: {{ message.body }}  on {{ message.createdAt }}
+      </div>
     </div>
 
     <div ng-show="isSignedIn" class="form">
