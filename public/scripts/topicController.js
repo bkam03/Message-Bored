@@ -26,6 +26,7 @@ angular.module( 'app' )
         name: localStorageService.getUserNameFromLocalStorage()
       };
       $scope.messages.push( postingMessage );
+      $scope.message="";
     } )
     .catch( ( err ) => {
       console.log( err );
