@@ -46,7 +46,8 @@ router.get( '/by-topic/:topic_id', ( req, res ) => {
   } );
 } );
 
-router.post( '/', ( req, res ) => {
+router.route( '/' )
+.post( ( req, res ) => {
   let message = req.body;
   Message.create( {
     body: message.body,
@@ -58,6 +59,21 @@ router.post( '/', ( req, res ) => {
   } )
   .catch( ( err ) => {
     console.log( err );
+  } );
+} )
+.get( ( req, res ) => {
+  Message.findAll({
+    include : [
+      {
+        model: db.User
+      }
+    ]
+  } )
+  .then( ( messages ) => {
+    res.send( messages );
+  } )
+  .catch( ( err ) => {
+    res.send( err );
   } );
 } );
 
