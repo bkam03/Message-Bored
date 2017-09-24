@@ -14,13 +14,14 @@ angular.module( 'app' )
       $scope.topicList = topicList;
     } )
     .catch( ( err ) => {
-
+      console.log( err );
     } );
   }
 
   function isUserSignedIn(){
     let isUserSignedIn = localStorageService.getUserIdFromLocalStorage();
-    console.log( 'signed in?', isUserSignedIn );
+    $rootScope.isSignedIn = isUserSignedIn ? true : false;
+    console.log( 'signed in?', $scope.isSignedIn );
   }
 
   $scope.isSignedIn = true;
