@@ -34,7 +34,7 @@ a {
 
 .itemContainer {
   width: 100%; }
-  .itemContainer .message {
+  .itemContainer .item {
     border: 1px dotted black; }
 
 .form {

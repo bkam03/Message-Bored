@@ -5,9 +5,11 @@
   <title>Document</title>
 </head>
 <body>
-  <div ng-repeat="user in users">
-  <a ng-href="/users/{{user.id}}">{{ user.name }}</p>
-    <br />
+  <div class="viewContainer">
+    <div ng-repeat="user in users">
+    <a ng-href="/users/{{user.id}}">{{ user.name }}</p>
+      <br />
+    </div>
   </div>
 
 </body>
