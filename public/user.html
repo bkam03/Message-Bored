@@ -5,17 +5,19 @@
   <title>Document</title>
 </head>
 <body>
-  <center>User</center>
-  User: {{ user.name }}
-  Joined: {{ user.createdAt }}
-  <br />
-  <br />
-  <div ng-repeat="message in messages">
-  #
-   {{ message.Topic.topic }}
-   {{ message.body }}
-   {{ message.createdAt }}
-   <br />
+  <div class="viewContainer">
+    <h2>User</h2>
+    User: {{ user.name }}
+    Joined: {{ user.createdAt }}
+    <br />
+    <br />
+    <div ng-repeat="message in messages">
+    #
+     {{ message.Topic.topic }}
+     {{ message.body }}
+     {{ message.createdAt }}
+     <br />
+    </div>
   </div>
 </body>
 </html>
